@@ -1,9 +1,14 @@
+const todos =  [
+    {text: "Hello world"},
+    {text: "Hello nice"},
+    {text: "Hello slave"},
+]
+
 const app = {
-    date() {
+    data() {
         return {
-            message: "You loaded this page on" + new Date().toLocaleString() 
+            todos: todos
         }
     }
 }
-
 Vue.createApp(app).mount('#app');
