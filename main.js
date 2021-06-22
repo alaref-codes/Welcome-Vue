@@ -1,15 +1,13 @@
-const app = Vue.createApp({
-  data() {
-    return {
-      name: 'Alaref Abushaala',
-      }
+const mssg = Vue.createApp({
+  data(){
+    return{
+      checkedNames: [],
+    }
   },
-  computed: {
-    decide() {
-      return{
-        boldy: this.name.length > 10,
-        redy: this.name[0] === "A", 
-      }
+  computed:{
+    priced() { 
+      return this.checkedNames.length * 10 + ' $'
     }
   }
-}).mount("#app")
+
+}).mount('#mssg')
