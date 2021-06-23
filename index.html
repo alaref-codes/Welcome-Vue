@@ -5,22 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VUE</title>
-    <style>
-        input {
-            display: inline;
-        }
-        p {
-            display: inline;
-            margin-left: 10px;
-        }
-    </style>
 </head>
 <body>  
     <div id="app">
-        <counter-button></counter-button>
-        <counter-button></counter-button>
-        <counter-button></counter-button>       
+        <input type="text" v-bind:value="source" placeholder="v-bind">
+        <input type="text" v-model="source" placeholder="v-model">
+        <h3>{{source}}</h3>
     </div>
+
+
     <script src="https://unpkg.com/vue@next"></script>
     <script src="main.js"></script>
 </body>

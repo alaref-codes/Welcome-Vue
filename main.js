@@ -1,16 +1,7 @@
-const app = Vue.createApp({})
-
-app.component( 'counter-button' ,{
+const app = Vue.createApp({
   data() {
     return {
-      counter: 0,
+      source: "Alaref",
     }
-  },
-  template: `
-    <button @click="counter++" >
-    You clicked this {{counter}}
-    </button>
-  `
-})
-
-app.mount("#app")
+  }
+}).mount("#app")
