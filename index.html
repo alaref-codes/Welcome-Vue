@@ -16,20 +16,11 @@
     </style>
 </head>
 <body>  
-    <div id="mssg">
-        <input type="checkbox" id="spinner" value="spinner"  v-model="checkedNames">
-        <label for="spinner">spinner</label>
-        <input type="checkbox" id="YoYo" value="YoYo"  v-model="checkedNames">
-        <label for="YoYo">YoYo</label>
-        <input type="checkbox" id="skate" value="skate"  v-model="checkedNames">
-        <label for="skate">skate</label>
-
-        <h4>{{checkedNames}}</h4>
-        <h3>Price : {{priced}}</h3>
-
+    <div id="app">
+        <counter-button></counter-button>
+        <counter-button></counter-button>
+        <counter-button></counter-button>       
     </div>
-
-
     <script src="https://unpkg.com/vue@next"></script>
     <script src="main.js"></script>
 </body>

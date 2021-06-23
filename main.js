@@ -1,13 +1,16 @@
-const mssg = Vue.createApp({
-  data(){
-    return{
-      checkedNames: [],
+const app = Vue.createApp({})
+
+app.component( 'counter-button' ,{
+  data() {
+    return {
+      counter: 0,
     }
   },
-  computed:{
-    priced() { 
-      return this.checkedNames.length * 10 + ' $'
-    }
-  }
+  template: `
+    <button @click="counter++" >
+    You clicked this {{counter}}
+    </button>
+  `
+})
 
-}).mount('#mssg')
+app.mount("#app")
