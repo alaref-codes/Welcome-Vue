@@ -8,13 +8,19 @@
 </head>
 <body>  
     <div id="app">
-        <input type="text" v-bind:value="source" placeholder="v-bind">
-        <input type="text" v-model="source" placeholder="v-model">
-        <h3>{{source}}</h3>
+        <p> {{name}} </p>
     </div>
+    <script src="vue.js"></script>
 
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: 'Alaref',
+                }
+            }
+        }).mount("#app");
+    </script>
 
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="main.js"></script>
 </body>
 </html>    
