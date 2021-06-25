@@ -8,31 +8,36 @@
 </head>
 <body>  
     <div id="app">
-        <p> {{name}} </p>
-        <comp-on v-for="post in posts"  :id="post.id" :title="post.title" :author="post.author"> </comp-on>
+        <input type="text" v-model="findLanguage">
+        <label>find language</label>
 
+        <ul>
+            <li v-for="lang in filterLanguage" > {{lang}} </li>
+        </ul>
     </div>
     <script src="vue.js"></script>
 
     <script>
-        Vue.component( 'comp-on', {
-            data: function() {
-                return {
-                }
-            },
-            props: ['id' , 'title' , 'author'],
-            template: '<p>{{id}} | {{title}} | {{author}}</p>'
-        })
-
         const app = new Vue({
             el: '#app',
             data: {
-                posts: [
-                    {id:1 , title:'ONE' , author:'Fathi'},
-                    {id:2 , title:'Two' , author:'Alaref'},
-                    {id:3 , title:'Three' , author:'Ahmed'}
-
-                ]
+                findLanguage: '',
+                languages: [
+                    'Html',
+                    'Python',
+                    'Css',
+                    'Sass',
+                    'Php',
+                    'Java',
+                    'JavaScript',
+                    ]
+            },
+            computed: {
+                filterLanguage: function() {
+                    const filtered = new RegExp(this.findLanguage , 'i');
+                    return this.languages.filter( el => el.match(filtered))
+                    
+                }
             }
         })
 
