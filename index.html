@@ -8,10 +8,10 @@
 </head>
 <body>  
     <div id="app">
-        <label>Enter your UserName</label>
-        <input type="text" v-model="username">
-        <p> {{ validateUsername }} </p>
-        <p> {{ age }} </p>
+        <label >dinar : </label>
+        <input type="text" v-model="dinar">
+        <label >dollar : </label>
+        <input type="text" v-model="dollar" >
     </div>
     <script src="vue.js"></script>
 
@@ -19,24 +19,21 @@
         const app = new Vue({
             el: '#app',
             data: {
-                username: '',
-                age: 32,
+                dinar: 0,
+                dollar: 0
             },
             methods: {
             },
-            computed: {   
-                validateUsername() {
-                    console.log("RUN")
-                    if (!this.username) {
-                        return 'Please write your usernamme'
-                    }
-                    else if (this.username.length < 8) {
-                        return 'User name is too short'
-                    }
-                    else {
-                        return 'Hello "' + this.username + '" Every thing is good'
-                    }
-                }   
+            computed: {    
+            },
+            watch: {
+                dinar(v) {
+                    this.dollar = v / 5;
+                },
+                dollar(v) {
+                    this.dinar = v * 5;
+                }
+
             }
         })
 
