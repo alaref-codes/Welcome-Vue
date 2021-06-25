@@ -8,12 +8,10 @@
 </head>
 <body>  
     <div id="app">
-        <input type="text" v-model="findLanguage">
-        <label>find language</label>
-
-        <ul>
-            <li v-for="lang in filterLanguage" > {{lang}} </li>
-        </ul>
+        <label>Enter your UserName</label>
+        <input type="text" v-model="username">
+        <p> {{ validateUsername }} </p>
+        <p> {{ age }} </p>
     </div>
     <script src="vue.js"></script>
 
@@ -21,23 +19,24 @@
         const app = new Vue({
             el: '#app',
             data: {
-                findLanguage: '',
-                languages: [
-                    'Html',
-                    'Python',
-                    'Css',
-                    'Sass',
-                    'Php',
-                    'Java',
-                    'JavaScript',
-                    ]
+                username: '',
+                age: 32,
             },
-            computed: {
-                filterLanguage: function() {
-                    const filtered = new RegExp(this.findLanguage , 'i');
-                    return this.languages.filter( el => el.match(filtered))
-                    
-                }
+            methods: {
+            },
+            computed: {   
+                validateUsername() {
+                    console.log("RUN")
+                    if (!this.username) {
+                        return 'Please write your usernamme'
+                    }
+                    else if (this.username.length < 8) {
+                        return 'User name is too short'
+                    }
+                    else {
+                        return 'Hello "' + this.username + '" Every thing is good'
+                    }
+                }   
             }
         })
 
